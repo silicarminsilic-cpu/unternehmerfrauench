@@ -1,0 +1,1 @@
+try{var __i=document.getElementById("intro");if(sessionStorage.getItem("uf-i"))__i.classList.add("skip");else{sessionStorage.setItem("uf-i","1");document.body.classList.add("pre");setTimeout(function(){document.body.classList.remove("pre");window.dispatchEvent(new Event("hero-go"))},2500)}}catch(e){}
