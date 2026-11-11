@@ -34,6 +34,7 @@
       <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
+    <label class="ctry"><span class="sr">Land und Währung</span><select id="ctrySel" aria-label="Land und Währung wählen"><option value="CH">CH · CHF</option><option value="DE">DE · EUR</option><option value="AT">AT · EUR</option></select></label>
     <button class="icon-btn" id="themeBtn" type="button" aria-label="Farbschema wechseln"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     <a class="btn ghost sm dash-link" href="#dashboard" aria-label="Mein Bereich, zum Dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Mein Bereich</span></a>
     <a class="btn sm cta-head" href="#kursfinder" data-track="header_cta_click">Passende Masterclass finden</a>
@@ -67,17 +68,17 @@
           <a class="btn" href="#kursfinder" data-track="hero_cta_click">Finde in einer Minute deine Masterclass <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn ghost" href="#masterclasses">Die drei Kurse ansehen</a>
         </div>
-        <p class="trust fade d2"><i></i>CHF 449 zzgl. MwSt. einmalig · Unterlagen inklusive · 3 Monate Zugang</p>
-        <div class="hstats fade d3" id="hstats" role="list"><div role="listitem"><b data-hs="c">0</b><span>Masterclasses</span></div><div role="listitem"><b data-hs="m">0</b><span>Module</span></div><div role="listitem"><b data-hs="u">0</b><span>Unterlagen</span></div><div role="listitem"><b data-hs="z">0</b><span>Monate Zugang</span></div></div>
+        <p class="trust fade d2"><i></i><span class="prt2">CHF 449 zzgl. MwSt.</span> einmalig · Unterlagen inklusive</p>
+        <div class="hstats fade d3" id="hstats" role="list"><div role="listitem"><b data-hs="c">0</b><span>Masterclasses</span></div><div role="listitem"><b data-hs="m">0</b><span>Module</span></div><div role="listitem"><b data-hs="u">0</b><span>Unterlagen</span></div></div>
       </div>
       <div class="hcs" role="group" aria-label="Die drei Masterclasses">
         
         <div class="hchip c1" aria-hidden="true"><b data-hc="mods">0</b><span>Module in<br>3 Masterclasses</span></div>
         <div class="hchip c2" aria-hidden="true"><svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="fg" cx="22" cy="22" r="18"/></svg><span><b>Dein Lernpfad</b><small>Modul 4 von 6</small></span></div>
         <div class="hchip c3" aria-hidden="true"><i>✦</i><span><b>Tagesimpuls</b><small>Welches Nein schafft dir Raum?</small></span></div>
-        <a class="hc h1c float" href="#woman-first" data-par=".05"><img data-img="p.photo" alt="Zwei Frauen in Schwarz sitzen nah beieinander und lächeln" width="505" height="308"><span class="lab">01 Woman First</span></a>
-        <a class="hc h2c float" href="#she-builds" data-par=".1"><img data-img="b.photo" alt="Zwei Frauen in Schwarz posieren selbstbewusst vor hellem Hintergrund" width="612" height="488"><span class="lab">02 She Builds</span></a>
-        <a class="hc h3c float" href="#lead-yourself" data-par=".02"><img data-img="a.photo" alt="Eine Frau mit blondem Haar blickt nachdenklich zur Seite" width="345" height="400"><span class="lab">03 Lead Yourself</span></a>
+        <a class="hc h1c float" href="#woman-first" data-par=".05"><img data-img="p.card" alt="Zwei Frauen in Schwarz sitzen nah beieinander und lächeln" width="505" height="308"><span class="lab">01 Woman First</span></a>
+        <a class="hc h2c float" href="#she-builds" data-par=".1"><img data-img="b.hero" alt="Zwei Frauen in Schwarz posieren selbstbewusst vor hellem Hintergrund" width="612" height="488"><span class="lab">02 She Builds</span></a>
+        <a class="hc h3c float" href="#lead-yourself" data-par=".02"><img data-img="a.hero" alt="Eine Frau mit blondem Haar blickt nachdenklich zur Seite" width="465" height="400"><span class="lab">03 Lead Yourself</span></a>
       </div>
     </div>
   </section>
@@ -133,7 +134,6 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5l4 4L8 20H4v-4z"/></svg>Praktische Übungen und Reflexionsfragen</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v7H4V5h10"/></svg>Umsetzungsaufgaben und Zusammenfassungen</li>
         </ul>
-        <p style="margin-top:18px" class="small-note"><span class="ph">Vorschau</span> Video, Download-Vorlagen und Community werden erst als Leistung genannt, wenn sie existieren.</p>
       </div>
       <div class="player rv" style="--i:1">
         <div class="tabs" role="tablist" aria-label="Masterclass für die Vorschau" id="lpTabs"></div>
@@ -149,20 +149,36 @@
   <section id="ueber-uns">
     <div class="wrap">
       <div class="sec-head rv"><p class="eyebrow">Die Menschen hinter der Marke</p><h2 class="h2">Von Frauen, die deinen Alltag kennen.</h2><p class="lead">Die Gründerinnen hinter unternehmerfrauen.ch.</p></div>
-      <div class="founders rv"><img data-img="b.photo" alt="Zwei Frauen in Schwarz posieren selbstbewusst vor hellem Hintergrund" width="612" height="488"><div><p class="quote">Erfolg entsteht, wenn du an dich glaubst und ins Handeln kommst.</p><p class="eyebrow" style="margin-top:14px">Stefanie &amp; Suzana</p></div></div>
+      <div class="founders rv"><img data-img="b.hero" alt="Zwei Frauen in Schwarz posieren selbstbewusst vor hellem Hintergrund" width="612" height="488"><div><p class="quote">Erfolg entsteht, wenn du an dich glaubst und ins Handeln kommst.</p><p class="eyebrow" style="margin-top:14px">Stefanie &amp; Suzana</p></div></div>
+      <div class="about rv">
+        <h3 class="h3">Das sind wir: Suzana und Stefanie</h3>
+        <p>Seit über 4 Jahren helfen wir selbstständigen Unternehmerinnen dabei, persönlich, unternehmerisch und wirtschaftlich zu wachsen.</p>
+        <p>Gemeinsam haben wir über 37 zertifizierte Ausbildungen in den letzten 15 Jahren in den Bereichen Metaphysik &amp; Quanten Reichtumsforschung, Humanenergetik, Business, Hypnose, Coaching und Erfolgs-Mindset.</p>
+        <p>Wir haben bereits über +500 Kundinnen dazu befähigt, glücklich und erfüllt in ihr Erfolgsleben durchzustarten. Diese sind auch heute noch gerne Stammkundinnen, weil sie den Millennium Vibe als Sprungbrett wertschätzen.</p>
+        <div class="grid2 about-cards">
+          <div class="card"><h4>Stefanie erkennt, was andere übersehen</h4><p>Ihre besondere Fähigkeit liegt darin, tief verankerte Bewusstseinsstrukturen und innere Muster präzise zu erfassen. Genau dort, wo sich unbewusste Blockaden, Selbstsabotage und innere Widersprüche zeigen.</p><p>Mit außergewöhnlicher Klarheit identifiziert sie mentale und emotionale Muster, die Frauen oft jahrelang unbewusst zurückhalten. Nicht an der Oberfläche, sondern an der Wurzel.</p></div>
+          <div class="card"><h4>Suzana arbeitet auf der Ebene von Frequenz, Ausstrahlung und Identität</h4><p>Ihre Stärke liegt darin, energetische Prozesse präzise zu erfassen und neu auszurichten, ohne dabei den Bezug zur Realität zu verlieren.</p><p>Sie hilft dir, dich neu auszurichten, deine Ausstrahlung bewusst zu führen und die Version von dir zu verkörpern, die nicht mehr schwankt, sondern klar vorangeht.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="alt" id="ergebnisse">
     <div class="wrap">
-      <div class="sec-head rv"><p class="eyebrow">Was du mitnimmst</p><h2 class="h2">Das nimmst du aus jeder Masterclass mit.</h2><p class="lead">Stimmen von Teilnehmerinnen zeigen wir erst, wenn echte, freigegebene Zitate vorliegen. Bis dahin sagen wir dir ehrlich, was jeder Kurs dir konkret bringen soll.</p></div>
+      <div class="sec-head rv"><p class="eyebrow">Was du mitnimmst</p><h2 class="h2">Das nimmst du aus jeder Masterclass mit.</h2><p class="lead">Ehrlich gesagt, was jeder Kurs dir konkret bringen soll.</p></div>
       <div class="grid3" id="goals"></div>
+    </div>
+  </section>
+  <section id="stimmen">
+    <div class="wrap">
+      <div class="sec-head rv"><p class="eyebrow">Stimmen</p><h2 class="h2">Das sagen Teilnehmerinnen.</h2><p class="lead">Erfahrungsberichte zu den Angeboten von Stefanie und Suzana bei Millennium Diamond Consciousness. Bewertung: 5,00 von 5.</p></div>
+      <div class="grid3 voices"><figure class="vc rv" style="--i:0"><div class="vs" role="img" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg></div><blockquote><p>«Tiefgreifend, bewusstseinserweiternd und absolut lebensverändernd! Nie zuvor bin ich 2 solch einzigartigen Frauen wie Stefanie und Suzana begegnet. Es ist besonders, mit welcher Hingabe, Leidenschaft, Präsenz, Intensität, und Liebe sie ihre Fähigkeiten und ihr Wissen in den Raum einfließen lassen. Ich bin unendlich dankbar die Energie aus diesem Raum, die Tools, die einem gelehrt werden und das daraus entstandene Resultat in meinem Leben zu haben. Es ist eine magisch kreierende Reise, die nie enden wird. Danke für euer SEIN, danke für eure Begleitung, ein Herzensdank für ALLES, was ihr hineingegeben habt!»</p></blockquote><figcaption>Teilnehmerin<small>Erfahrungsbericht zu Millennium Diamond Consciousness</small></figcaption></figure><figure class="vc rv" style="--i:1"><div class="vs" role="img" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg></div><blockquote><p>«Was für eine nährende und liebevolles Raum mit wundervolle, expandierende Ansätze und Tools, die mich in den Next Level katapultiert hat. Danke, Danke Danke! Ich empfehle euch absolut uneingeschränkt weiter an jeden, der Veränderung, Fülle und Selbstliebe in sein Leben haben möchte!»</p></blockquote><figcaption>Teilnehmerin<small>Erfahrungsbericht zu Millennium Diamond Consciousness</small></figcaption></figure><figure class="vc rv" style="--i:2"><div class="vs" role="img" aria-label="5 von 5 Sternen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.94 6.26 6.86.84-5.06 4.74 1.31 6.8L12 17.3l-6.05 3.34 1.31-6.8L2.2 9.1l6.86-.84z"/></svg></div><blockquote><p>«Große Dankbarkeit empfinde ich, wenn ich an die gemeinsame Zeit in Millennium Diamond Consciousness mit Steffi und Suzanna zurückblicke. Die vielen beitragenden Tools sind ein enormer Beitrag sein Leben und die Zukunft mit Bewusstsein nach seinen Wünschen und Vorstellungen zu gestalten. Ein Raum voller Rückhalt und Unterstützung, inspirierend und bewusstseinserweiternd. Die liebevolle, intensive und klare Energie der beiden Powerfrauen haben mich zur inneren und äußeren Fülle geführt. Und egal, was das wunderbare Leben für mich bereit hält, ich weiß in jeder Situation was zu tun oder zu lassen ist. Herzensdank für dieses lebensverändernde Begleitung. Herzensempfehlung an alle, die Füllebewusstsein und Glückseligkeit erleben wollen.»</p></blockquote><figcaption>Teilnehmerin<small>Erfahrungsbericht zu Millennium Diamond Consciousness</small></figcaption></figure></div>
     </div>
   </section>
 
   <section id="preise">
     <div class="wrap">
-      <div class="sec-head rv"><p class="eyebrow">Preise und Angebote</p><h2 class="h2">Einmal entscheiden. Einmal bezahlen. Alles inklusive.</h2><p class="lead">Jede Masterclass kostet CHF 449 zzgl. 8,1 % MwSt. als Einmalzahlung, inklusive aller Unterlagen. Du hast 3 Monate Zugang, kein Abo. Bezahlen kannst du direkt per Karte oder TWINT. Eine Rückerstattung ist nicht möglich.</p></div>
+      <div class="sec-head rv"><p class="eyebrow">Preise und Angebote</p><h2 class="h2">Einmal entscheiden. Einmal bezahlen. Alles inklusive.</h2><p class="lead">Jede Masterclass kostet <span class="prt">CHF 449 zzgl. 8,1 % MwSt.</span> als Einmalzahlung, inklusive aller Unterlagen. Kein Abo. Bezahlen kannst du direkt per Karte oder TWINT. Eine Rückerstattung ist nicht möglich.</p></div>
       <div class="grid3" id="pricing"></div>
     </div>
   </section>
@@ -229,7 +245,7 @@
 
   <section class="alt" id="faq">
     <div class="wrap two">
-      <div class="rv"><p class="eyebrow">FAQ</p><h2 class="h2" style="margin:14px 0 18px">Gut, dass du vorher fragst.</h2><p class="lead">Die häufigsten Fragen, ehrlich beantwortet. Was noch von Geschäftsangaben abhängt, ist markiert und wird vor dem Livegang festgelegt.</p></div>
+      <div class="rv"><p class="eyebrow">FAQ</p><h2 class="h2" style="margin:14px 0 18px">Gut, dass du vorher fragst.</h2><p class="lead">Die häufigsten Fragen, ehrlich beantwortet.</p></div>
       <div class="acc rv" id="faqList" style="--i:1"></div>
     </div>
   </section>
@@ -255,7 +271,7 @@
     <div class="arc"></div><div class="arc b"></div>
     <div class="wrap" style="position:relative">
       <h2 class="rv">Du musst nicht alles auf einmal ändern. Fang bei dir an.</h2>
-      <p class="rv">Finde in einer Minute heraus, welche Masterclass dein nächster Schritt sein kann. CHF 449 zzgl. MwSt., alle Unterlagen inklusive.</p>
+      <p class="rv">Finde in einer Minute heraus, welche Masterclass dein nächster Schritt sein kann. <span class="prt2">CHF 449 zzgl. MwSt.</span>, alle Unterlagen inklusive.</p>
       <div class="cta-row rv"><a class="btn" href="#kursfinder">Passende Masterclass finden</a><a class="btn ghost" href="#masterclasses">Alle Kurse ansehen</a></div>
     </div>
   </section>
@@ -267,12 +283,12 @@
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div><a class="logo" href="#" style="margin-bottom:12px"><span class="wm2">unternehmerfrauen<i>.ch</i></span></a><p>Digitale Masterclass-Plattform von Frauen für Frauen: persönlich, unternehmerisch und im echten Leben.</p></div>
+      <div><a class="logo" href="#" style="margin-bottom:12px"><span class="wm2">unternehmerfrauen<i>.ch</i></span></a><p>Digitale Masterclass-Plattform von Frauen für Frauen: persönlich, unternehmerisch und im echten Leben.</p><ul class="soc" id="fSoc" aria-label="Unternehmerfrauen in den sozialen Medien"></ul></div>
       <div><h4>Masterclasses</h4><ul id="fLinks"></ul></div>
-      <div><h4>Plattform</h4><ul id="fPlat"><li><a href="#masterclasses">Die Masterclasses</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li><li><a href="#dashboard">Mein Bereich (Demo)</a></li><li><a href="#app">App (bald)</a></li><li><a href="app.html">Member-App &amp; Admin (Prototyp)</a></li></ul></div>
-      <div><h4>Rechtliches</h4><ul><li><a href="#impressum">Impressum</a></li><li><a href="#datenschutz">Datenschutz</a></li><li><a href="#agb">AGB</a></li></ul></div>
+      <div><h4>Plattform</h4><ul id="fPlat"><li><a href="#masterclasses">Die Masterclasses</a></li><li><a href="#ueber-uns">Über uns</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li><li><a href="#dashboard">Mein Bereich</a></li><li><a href="#app">App (bald)</a></li></ul></div>
+      <div><h4>Rechtliches</h4><ul><li><a href="#impressum">Impressum und Überblick</a></li><li><a href="#datenschutz">Datenschutz</a></li><li><a href="#agb">AGB</a></li><li><a href="#widerruf">Widerruf und Rückerstattung</a></li><li><a href="#zusammenarbeit">Zusammenarbeit und Projekte</a></li><li><a href="#rechtliches">Rechtliche Hinweise</a></li><li><a href="#intern">Interne Bedingungen</a></li><li><button type="button" class="fcookie" data-cookie-open>Cookie-Einstellungen</button></li></ul></div>
     </div>
-    <p class="legal"><b style="color:var(--ink)">Millennium Diamond Consciousness, Martino</b> (Einzelfirma) · Riedstrasse 13b, 8832 Wollerau · UID CHE-175.104.204 · hi@unternehmerfrauen.ch<br>Demo ohne Tracking: Es werden keine Cookies gesetzt und keine Daten übertragen, daher zeigt diese Vorschau keinen Cookie-Banner. Rechtstexte sind vor Livegang für den tatsächlichen Betreiber zu prüfen. © Unternehmerfrauen.ch (Demo)</p>
+    <p class="legal">© Unternehmerfrauen.ch · <a href="#impressum">Impressum und Rechtliches</a> · <button type="button" class="fcookie" data-cookie-open>Cookie-Einstellungen</button></p>
   </div>
 </footer>
 <div class="toast" id="toast" role="status"></div>
