@@ -870,7 +870,8 @@ function renderLogin(role){
   const head=`<section class="chero" style="padding-bottom:clamp(56px,8vw,96px)"><div class="wrap"><a class="crumb" href="#">${ARROW} Zur Startseite</a><p class="eyebrow" style="margin-top:12px">${area}</p><h1 style="font-size:clamp(36px,6vw,72px);margin:12px 0 18px;font-weight:500">Anmelden</h1>`;
   const foot=`<p class="small-note" style="margin-top:26px">${adm?'<a href="#login">Zum Login für Mein Bereich</a>':'<a href="#login-admin">Zum Admin-Login</a>'}</p></div></section>`;
   if(authed(role)){crs.innerHTML=head+`<div class="lg-note ok"><p><b>Du bist angemeldet.</b></p></div><div class="cta-row"><a class="btn" href="#${adm?'admin':'dashboard'}">Zum ${area} ${ARROW}</a><button class="btn ghost" type="button" data-act="logout">Abmelden</button></div>`+foot;return}
-  if(LIVE&&!CFG.apiBase){crs.innerHTML=head+`<p class="lead" style="max-width:62ch">Der Login für ${adm?'den Admin-Bereich':'Mein Bereich'} startet mit der Eröffnung der Plattform. Neue Zugänge werden erst nach interner Freigabe aktiviert.</p><div class="lg-note"><p>Möchtest du frühzeitig Zugang beantragen? Schreib uns an <b>${CFG.mail}</b>.</p></div>`+foot;return}
+  if(LIVE&&!CFG.apiBase){crs.innerHTML=head+`<p class="lead lg-old" style="max-width:62ch">Der Login für ${adm?'den Admin-Bereich':'Mein Bereich'} startet mit der Eröffnung der Plattform. Neue Zugänge werden erst nach interner Freigabe aktiviert.</p><div class="lg-note lg-old"><p>Möchtest du frühzeitig Zugang beantragen? Schreib uns an <b>${CFG.mail}</b>.</p></div>
+  <div class="m-login"><div class="ml-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></div><h2>${adm?'Admin-Bereich':'Dein Bereich'} öffnet bald</h2><p>Mit der Eröffnung der Plattform meldest du dich hier an und findest alle Unterlagen deiner Masterclass an einem Ort.</p><ul class="ml-pts"><li>Workbooks, Journal und Übungen als PDF</li><li>Ansehen, speichern und ausdrucken</li><li>Zugang nach persönlicher Freigabe</li></ul><a class="btn" href="mailto:${CFG.mail}?subject=Zugang%20vorab%20anfragen">Zugang vorab anfragen ${ARROW}</a><a class="ml-sec" href="#">Zurück zur Startseite</a></div>`+foot;return}
   crs.innerHTML=head+`<p class="lead" style="max-width:62ch">${adm?'Nur für das Team. Neue Admin-Zugänge gibt die Inhaberin intern frei.':'Melde dich mit deinem freigegebenen Zugang an. Neu hier? Beantrage deinen Zugang, wir prüfen jeden Antrag intern, bevor das Login aktiv wird.'}</p>${authNote(role)}
   <div class="lg-tabs" role="tablist"><button type="button" role="tab" class="on" data-lgtab="in">Anmelden</button><button type="button" role="tab" data-lgtab="rq">Zugang beantragen</button></div>
   <div class="lg-grid show-in"><form class="card" id="lgForm" data-role="${role}" novalidate style="display:grid;gap:14px"><h3>Login</h3><div class="fld"><label for="lgMail">E-Mail</label><input id="lgMail" type="email" autocomplete="username" value="${E(AU.mail||'')}"></div>${LIVE?'<div class="fld"><label for="lgPw">Passwort</label><input id="lgPw" type="password" autocomplete="current-password"></div>':'<p class="small-note" style="margin:0">In der Demo gibt es kein Passwort. Die Freigabe wird anhand deines Antrags geprüft.</p>'}<div class="lg-err" id="lgErr" role="alert"></div><button class="btn" type="submit">Anmelden ${ARROW}</button></form>
@@ -986,4 +987,17 @@ function route(){
 addEventListener('hashchange',route);
 route();
 beInit();
+})();
+
+(function(){const g=document.querySelector('.hcs');if(!g)return;const mq=matchMedia('(max-width:700px)');const cards=[...g.querySelectorAll('.hc')];
+const dots=document.createElement('div');dots.className='hc-dots';dots.setAttribute('aria-hidden','true');dots.innerHTML=cards.map(()=>'<i></i>').join('');g.insertAdjacentElement('afterend',dots);
+let cur=-1,timer=null,hold=false;
+function mark(i){if(i===cur)return;cur=i;cards.forEach((c,k)=>c.classList.toggle('on',k===i));[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i))}
+function nearest(){const r=g.getBoundingClientRect(),mid=r.left+r.width/2;let b=0,bd=1e9;cards.forEach((c,k)=>{const q=c.getBoundingClientRect(),d=Math.abs(q.left+q.width/2-mid);if(d<bd){bd=d;b=k}});return b}
+g.addEventListener('scroll',()=>{if(mq.matches)mark(nearest())},{passive:true});
+['touchstart','pointerdown'].forEach(ev=>g.addEventListener(ev,()=>{hold=true},{passive:true}));
+['touchend','pointerup','touchcancel'].forEach(ev=>g.addEventListener(ev,()=>{setTimeout(()=>{hold=false},4000)},{passive:true}));
+function go(i){const c=cards[i];g.scrollTo({left:c.offsetLeft-(g.clientWidth-c.clientWidth)/2,behavior:'smooth'})}
+function tick(){if(!mq.matches||hold||document.hidden||matchMedia('(prefers-reduced-motion: reduce)').matches)return;go((nearest()+1)%cards.length)}
+setTimeout(()=>{mark(0);timer=setInterval(tick,4200)},900);
 })();
