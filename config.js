@@ -37,7 +37,7 @@ window.UF_CONFIG={
     // 'lead-yourself':'https://www.paypal.com/...'
   },
   // Supabase-Backend (Login, Admin, geschützte PDFs): Projekt-URL und anon-Schlüssel aus Supabase eintragen.
-  supabase:{url:'',anonKey:'',bucket:'unterlagen'},
+  supabase:{url:'https://tjsgrhjbcszjgzazfcki.supabase.co',anonKey:'sb_publishable_-pTI5OU5200Q2wX3aCGLYw_W3nav-nB',bucket:'unterlagen'},
   social:{
     instagram:'https://www.instagram.com/unternehmerfrauen.ch/',
     facebook:'',
