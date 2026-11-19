@@ -36,10 +36,14 @@ window.UF_CONFIG={
     // 'she-builds':'https://www.paypal.com/...',
     // 'lead-yourself':'https://www.paypal.com/...'
   },
+  // Supabase-Backend (Login, Admin, geschützte PDFs): Projekt-URL und anon-Schlüssel aus Supabase eintragen.
+  supabase:{url:'',anonKey:'',bucket:'unterlagen'},
   social:{
-    instagram:'',
+    instagram:'https://www.instagram.com/unternehmerfrauen.ch/',
     facebook:'',
-    linkedin:'',
+    linkedin:'https://www.linkedin.com/in/suzana-martino-1b5aa565',   // Suzana
+    linkedin2:'',      // Stefanie (Link folgt)
+    whatsapp:'',       // Nummer folgt: z. B. '41791234567' (Landesvorwahl ohne + und ohne 0) oder https://wa.me/41791234567
     tiktok:'',
     youtube:'',
     spotify:'',        // Podcast auf Spotify
